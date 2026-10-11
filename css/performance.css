@@ -1974,3 +1974,65 @@ article.unified-client:hover .art-name {
     width: 90px;
   }
 }
+
+/* Enlaces legales del pie */
+.footer-legal {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+.footer-legal a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.footer-legal a:hover {
+  color: var(--text, inherit);
+}
+
+/* Flechas siempre como texto (en iOS/Android algunas se pintaban como emoji) */
+body {
+  font-variant-emoji: text;
+}
+
+/* Páginas legales */
+.legal-intro h1 {
+  font-size: clamp(36px, 6vw, 96px);
+}
+.legal-updated {
+  color: var(--muted);
+  font-size: 14px;
+}
+.legal-doc {
+  max-width: 820px;
+  margin-inline: 0;
+  padding-bottom: 90px;
+  line-height: 1.65;
+}
+.legal-doc h2 {
+  font-size: clamp(20px, 2.2vw, 28px);
+  margin: 44px 0 14px;
+}
+.legal-doc p,
+.legal-doc li {
+  font-size: 16px;
+}
+.legal-doc p + p,
+.legal-doc ul + p,
+.legal-doc p + ul {
+  margin-top: 14px;
+}
+.legal-doc ul {
+  padding-left: 20px;
+  margin: 0;
+}
+.legal-doc li + li {
+  margin-top: 8px;
+}
+.legal-doc a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.legal-doc p {
+  color: var(--ink);
+}

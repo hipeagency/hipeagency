@@ -32,7 +32,7 @@ const cards = [
   [
     "contact",
     "LET’S MAKE<br>IT PERFORM",
-    "INFO@HIPEAGENCY.ES",
+    "maxim@HIPEAGENCY.ES",
     "START A PROJECT",
   ],
 ];
