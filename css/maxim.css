@@ -1,0 +1,338 @@
+/* Página de perfil: /maxim.html — usa los tokens de performance.css */
+.profile-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.9fr) minmax(0, 1fr);
+  gap: 40px;
+  padding-block: 60px 50px;
+  border-bottom: 1px solid var(--line);
+  align-items: end;
+}
+.profile-hero h1 {
+  font-size: clamp(56px, 9.4vw, 156px);
+  line-height: 0.88;
+  letter-spacing: -0.055em;
+  margin-top: 34px;
+}
+.profile-role {
+  margin-top: 30px;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+.profile-side {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+.profile-portrait {
+  margin: 0;
+  width: 200px;
+  max-width: 100%;
+}
+.profile-portrait img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: cover;
+  filter: grayscale(1);
+}
+.profile-portrait figcaption {
+  margin-top: 10px;
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+}
+.profile-side p {
+  font-size: 15px;
+  max-width: 360px;
+  color: var(--ink);
+}
+
+/* Datos clave */
+.profile-facts {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  border-bottom: 1px solid var(--line);
+}
+.fact {
+  padding: 34px 24px 30px 0;
+  border-right: 1px solid var(--line);
+}
+.fact + .fact {
+  padding-left: 24px;
+}
+.fact:last-child {
+  border-right: 0;
+}
+.fact strong {
+  display: block;
+  font-family: Clash, Arial, sans-serif;
+  font-weight: 500;
+  font-size: clamp(34px, 3.6vw, 56px);
+  letter-spacing: -0.045em;
+  line-height: 1;
+}
+.fact span {
+  display: block;
+  margin-top: 12px;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* Servicios */
+.offer-list {
+  border-top: 1px solid var(--ink);
+}
+.offer {
+  display: grid;
+  grid-template-columns: 70px minmax(0, 1fr) minmax(0, 1.3fr);
+  gap: 24px;
+  padding: 30px 0;
+  border-bottom: 1px solid var(--line);
+  align-items: baseline;
+}
+.offer h3 {
+  font-size: clamp(24px, 2.4vw, 38px);
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+}
+.offer.is-lead h3::after {
+  content: "";
+  display: inline-block;
+  width: 0.2em;
+  height: 0.2em;
+  margin-left: 0.08em;
+  background: var(--red);
+}
+
+/* Hub como prueba */
+.proof {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr);
+  gap: 50px;
+  align-items: center;
+}
+.proof h2 {
+  font-size: clamp(40px, 4.8vw, 78px);
+  margin-block: 26px 28px;
+}
+.proof p + p {
+  margin-top: 16px;
+}
+.proof ul {
+  list-style: none;
+  padding: 0;
+  margin: 28px 0 0;
+  border-top: 1px solid var(--line);
+}
+.proof li {
+  padding: 13px 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.hub-mock {
+  position: relative;
+  background: var(--ink);
+  color: #f7f6f2;
+  aspect-ratio: 1.45;
+  padding: 26px;
+  display: grid;
+  grid-template-columns: 0.55fr 2fr;
+  gap: 18px;
+  overflow: hidden;
+}
+.hub-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  color: #9a9a95;
+}
+.hub-nav b {
+  color: #f7f6f2;
+  font-weight: 400;
+}
+.hub-nav .brand-word {
+  font-family: Clash, sans-serif;
+  font-size: 22px;
+  letter-spacing: -0.06em;
+  color: #f7f6f2;
+  margin-bottom: 12px;
+}
+.hub-board {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  align-content: start;
+}
+.hub-col {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.hub-col > span {
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  color: #9a9a95;
+  text-transform: uppercase;
+}
+.hub-card {
+  height: 38px;
+  background: #222221;
+  border-left: 2px solid #3a3a38;
+}
+.hub-card.hot {
+  border-left-color: var(--red);
+}
+/* Trayectoria */
+.timeline {
+  border-top: 1px solid var(--ink);
+}
+.timeline-row {
+  display: grid;
+  grid-template-columns: 170px minmax(0, 1fr) minmax(0, 1fr);
+  gap: 24px;
+  padding: 24px 0;
+  border-bottom: 1px solid var(--line);
+  align-items: baseline;
+}
+.timeline-row time {
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+}
+.timeline-row h3 {
+  font-size: 22px;
+  letter-spacing: -0.03em;
+}
+.timeline-row .tag {
+  display: inline-block;
+  margin-left: 10px;
+  font-family: Arial, sans-serif;
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  vertical-align: middle;
+  color: var(--red);
+}
+
+/* Bloque deporte */
+.sport-band {
+  background: var(--ink);
+  color: #f7f6f2;
+  padding-block: 100px;
+}
+.sport-band p {
+  color: #b9b8b2;
+}
+.sport-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  gap: 60px;
+  align-items: end;
+}
+.sport-band h2 {
+  font-size: clamp(44px, 6vw, 100px);
+  margin-top: 26px;
+}
+.sport-band .index {
+  color: #8a8a85;
+}
+.honours {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-top: 1px solid #3a3a38;
+}
+.honours li {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 15px 0;
+  border-bottom: 1px solid #3a3a38;
+  font-size: 13px;
+}
+.honours li span:last-child {
+  color: #8a8a85;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-align: right;
+}
+
+/* Formación */
+.edu-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0;
+  border-top: 1px solid var(--ink);
+}
+.edu {
+  padding: 26px 24px 26px 0;
+  border-bottom: 1px solid var(--line);
+}
+.edu h3 {
+  font-size: 19px;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+.edu p {
+  margin-top: 8px;
+  font-size: 12px;
+}
+
+@media (max-width: 900px) {
+  .profile-hero,
+  .proof,
+  .sport-grid {
+    grid-template-columns: 1fr;
+  }
+  .profile-facts,
+  .edu-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .fact:nth-child(2) {
+    border-right: 0;
+  }
+  .fact:nth-child(3) {
+    padding-left: 0;
+  }
+  .fact:nth-child(-n + 2) {
+    border-bottom: 1px solid var(--line);
+  }
+  .offer {
+    grid-template-columns: 44px 1fr;
+  }
+  .offer p {
+    grid-column: 2;
+  }
+  .timeline-row {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+}
+@media (max-width: 560px) {
+  .fact strong {
+    font-size: 28px;
+  }
+  .edu-grid {
+    grid-template-columns: 1fr;
+  }
+  .hub-mock {
+    grid-template-columns: 1fr;
+    aspect-ratio: auto;
+  }
+  .hub-nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .hub-board {
+    grid-template-columns: 1fr 1fr;
+  }
+}
