@@ -39,6 +39,65 @@
       .forEach((el) => observer.observe(el));
   }
   const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if ("IntersectionObserver" in window && !reduceMotion) {
+    // Entrada de contenidos al hacer scroll
+    const kinds = [
+      ["h1, h2", "mask"],
+      ["main img:not(.brand-logo)", "img"],
+      [
+        ".eyebrow, main p, main ul, .projects, .timeline-row, .fact, .work-end, .text-link",
+        "fade",
+      ],
+    ];
+    const targets = [];
+    kinds.forEach(([selector, kind]) =>
+      document.querySelectorAll(selector).forEach((el) => {
+        if (el.closest("[data-reveal], .capability, .site-header, footer")) return;
+        el.dataset.reveal = kind;
+        targets.push(el);
+      }),
+    );
+    const done = (el) => {
+      el.removeAttribute("data-reveal");
+      el.classList.remove("is-revealed");
+      el.style.transitionDelay = "";
+    };
+    const revealer = new IntersectionObserver(
+      (entries) => {
+        entries
+          .filter((entry) => entry.isIntersecting)
+          .forEach((entry, i) => {
+            const el = entry.target;
+            el.style.transitionDelay = `${Math.min(i, 5) * 80}ms`;
+            el.classList.add("is-revealed");
+            setTimeout(() => done(el), 1300 + Math.min(i, 5) * 80);
+            revealer.unobserve(el);
+          });
+      },
+      { rootMargin: "0px 0px -8% 0px" },
+    );
+    targets.forEach((el) => revealer.observe(el));
+    // Barra de progreso de lectura
+    const bar = document.createElement("div");
+    bar.className = "scroll-progress";
+    bar.setAttribute("aria-hidden", "true");
+    document.body.append(bar);
+    let ticking = false;
+    const progress = () => {
+      const max = document.documentElement.scrollHeight - innerHeight;
+      bar.style.transform = `scaleX(${max > 0 ? scrollY / max : 0})`;
+      ticking = false;
+    };
+    addEventListener(
+      "scroll",
+      () => {
+        if (!ticking) requestAnimationFrame(progress);
+        ticking = true;
+      },
+      { passive: true },
+    );
+    progress();
+  }
   document.querySelectorAll(".projects.is-carousel").forEach((track) => {
     // Copia de las tarjetas para que el bucle no tenga final
     [...track.children].forEach((card) => {
